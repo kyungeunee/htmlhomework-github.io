@@ -1,0 +1,170 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+
+.readable-hidden{
+    /*보이지 않지만 있도록 공간 두는 것*/
+    font-size: 0;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.container{
+    width: 960px;
+    margin: 0 auto;
+} 
+
+/*틀릴수 있음을 꼭 명시*/
+.header{
+  
+    height: 80px;
+    line-height: 80px;
+    /*center 로 맞춰주는 것*/
+    /* overflow: hidden; */
+}
+
+.header::after{
+  content: '';
+  display:block;
+  clear: both;
+  /*header 밑에 공간을 주는 것*/
+}
+
+.title{
+    float: left;
+  color: #ff6c6c;
+    font-size:24px;
+    /*float을 주어 오른쪽 공간이 남도록*/
+}
+
+nav{
+    float: right;
+}
+
+.gnb{
+  list-style-type: none;  
+  /*list 의 ul 동그라미 없애는 부분*/
+  /*overflow: none;*/
+  /* global navigation bar*/
+  
+}
+
+ul.gnb>li{
+    float: left;
+    margin-left:15px 
+}
+
+ul.gnb>li>a{
+    text-decoration:none;
+    color:#181818;
+    font-size: 15px;
+    /*li의 밑줄 제거*/
+    
+}
+
+/*landing => banner 로 바꿔서 해도..*/
+
+.landing{
+    background-image: url(4.png);
+    /*22쓰면 댐//외부링크 사용가능*/
+    height: 600px;
+    background-size: cover;
+    /* 영역을 꽉 차게 */
+    background-position: center center;
+    /* x축, y 축*/
+    /*----------------*/
+    margin: 0 auto;
+    width: 960px;
+    /*width는 안줘도 댐=> 컨테이너에 굳이 안넣을 것이므로*/
+    /*중간에 들어가 있는것 이유는 container 때문이라 div로 끊어준다 */
+    
+    
+    background-repeat: no-repeat;
+    /*만약 반복되면 쓰기 */
+    opacity:0.8;
+    /*opacity 는 너무 안보이면 쓰기 */
+    
+    
+}
+
+.section-title{
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+/* 아래랑 위랑 같은 애 */
+.landing h2{
+    color:#ffd6d6;
+    text-align: center;
+}
+
+.landing p{
+    color:#ffd6d6;
+    text-align: center;
+    font-size:18px;
+}
+/* 두개는 color를 하얗게 할거야
+그리고 텍스트는 센터야 */
+/* 텍스트 크기는 따로 주고 h2 쪽에는 마진 바틈을 줘서 간격을 줄거야 */
+/*컬러 알고 싶으면 hex color */
+
+.landing >.container{
+    padding-top: 200px;
+}
+/*landing 안에 있는 container는 padding 200*/
+
+
+/*blog*/
+
+
+/*6번*/
+.blog{
+    padding: 100px 0;
+    /*패딩 상하로는 100 좌우로는 0*/
+    /*상하 부분에서 하에 간격 없는거는 */
+}
+/*7번 이거로 해결 */
+.blog::after {
+    /*블로그의 마지막 아이는 내용은 없지만 블록이고 플로트를 클리어해 
+    즉 플로트 영향을 받지 않을 거야*/
+    content: '' ;
+    display:block;
+    clear: both;
+}
+/* 1번 블로그 아래의 아티클은 모두 float left할거야 */
+.blog article{
+    float: left;
+    width: 300px;
+    /*이미지의 사이즈 조절 => 보여주기 뭔일이야?*/
+    margin-right:30px;
+     /*좌우간격 조절을 위해 마진 right 넣어줌*/
+}
+
+/*5번*/
+
+.blog article:last-child{
+    margin-right: 0;
+    /*아래로 내려간 마지막 아이의 마진을 없앤다*/
+}
+
+/*2번*/
+.blog article img{
+    width: 100%;
+    /*위에 사이즈 조절된 값으로 나오도록 300px */
+    height: auto;
+/*본래 비율 맞춰서 줄어든다=> 간격 맞추기 위해서*/
+/*이미지는 인라인 태그=> 마진 패딩 줄수 없음 그래서 p태그에 넣어준다*/
+    
+}
+/*4번*/
+.blog article p{
+    margin-top: 20px;
+    padding: 5px;
+    text-align: center;
+    /*위아래간격 조절을 위해 마진탑 넣어줌*/
+
+}
+/*footer*/
+.footer{
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    background-color: black;
+}
